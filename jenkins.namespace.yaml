@@ -1,0 +1,9 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: jenkins
+---
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: app
