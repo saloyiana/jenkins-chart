@@ -5,6 +5,6 @@ echo username: $(kubectl -n jenkins --container jenkins exec $POD -- env | grep 
 echo password: $(kubectl -n jenkins --container jenkins exec $POD -- env | grep ADMIN_PASSWORD | sed 's/.*=//')
 echo port: $(kubectl get service jenkins -n jenkins -o json | jq '.spec.ports[0].nodePort')
 kubectl create clusterrolebinding jenkins --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n app
-#kubectl create rolebinding elk --clusterrole=admin --serviceaccount=jenkins:default --namespace=elk
-#kubectl create clusterrolebinding elk --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n elk
-#kubectl create clusterrolebinding grafana --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n monitor
+kubectl create rolebinding elk --clusterrole=admin --serviceaccount=jenkins:default --namespace=elk
+kubectl create clusterrolebinding elk --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n elk
+kubectl create clusterrolebinding grafana --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n monitor
