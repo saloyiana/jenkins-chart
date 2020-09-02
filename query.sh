@@ -8,3 +8,5 @@ kubectl create clusterrolebinding jenkins --clusterrole cluster-admin --servicea
 kubectl create rolebinding elk --clusterrole=admin --serviceaccount=jenkins:default --namespace=elk
 kubectl create clusterrolebinding elk --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n elk
 kubectl create clusterrolebinding grafana --clusterrole cluster-admin --serviceaccount=jenkins:jenkins -n monitor
+kubectl create clusterrolebinding monitor --clusterrole cluster-admin --serviceaccount=jenkins:default -n monitor
+kubectl create clusterrolebinding elf --clusterrole cluster-admin --serviceaccount=jenkins:default -n elk
